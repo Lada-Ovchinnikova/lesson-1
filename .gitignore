@@ -1,0 +1,11 @@
+# code editors cache
+.idea/
+.vs/
+# system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# node files
+node_modules/
+package-lock.json
