@@ -18,7 +18,8 @@ const path = {
   src: {
     html: 'src/*.{html,htm}',
     scss: 'src/scss/main.scss',
-    js: ['src/js/libs.js','src/js/app.js'],
+    js: 'src/js/vendor/*.js',
+    // js: ['src/js/libs.js','src/js/app.js'],
     fonts: 'src/fonts/**/*.{eot,svg,ttf,woff,woff2}',
     img: 'src/img/**/*.{jpeg,jpg,png,svg,gif,webp}',
   },
@@ -58,6 +59,8 @@ gulp.task('build:scss', function (done){
 gulp.task('build:js', function (done){
   gulp.src(path.src.js)
     .pipe(plumber())
+    .pipe(rigger())
+    .pipe(terser())
     .pipe(gulp.dest(path.build.js));
   done();
 });
