@@ -70,5 +70,4 @@ gulp.task('build:js', function (done){
     .pipe(gulp.dest(path.build.js));
   done();
 });
-
 gulp.task('default', gulp.series('clean', 'mv:fonts','build:html', 'build:scss','build:js'));
