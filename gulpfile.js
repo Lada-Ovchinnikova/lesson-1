@@ -5,7 +5,8 @@ autoprefixer = require ('gulp-autoprefixer'),
 terser = require ('gulp-terser'),
 sass = require ('gulp-sass') (require ('node-sass')),
 htmlmin = require ('gulp-htmlmin'),
-rigger = require ('gulp-rigger');
+rigger = require ('gulp-rigger'),
+rimraf = require ('rimraf');
 
 const path = {
   build: {
@@ -18,11 +19,17 @@ const path = {
   src: {
     html: 'src/*.{html,htm}',
     scss: 'src/scss/main.scss',
-    js: ['src/js/libs.js','src/js/app.js'],
+    js: 'src/js/libs.js',
     fonts: 'src/fonts/**/*.{eot,svg,ttf,woff,woff2}',
     img: 'src/img/**/*.{jpeg,jpg,png,svg,gif,webp}',
   },
+  clean: 'build/'
 };
+
+gulp.task('clean', function (done){
+  rimraf(path.clean, done);
+
+});
 
 gulp.task('mv:fonts', function (done){
   gulp.src(path.src.fonts)
@@ -58,8 +65,10 @@ gulp.task('build:scss', function (done){
 gulp.task('build:js', function (done){
   gulp.src(path.src.js)
     .pipe(plumber())
+    .pipe(rigger())
+    .pipe(terser())
     .pipe(gulp.dest(path.build.js));
   done();
 });
 
-gulp.task('default', gulp.series('mv:fonts'));
+gulp.task('default', gulp.series('clean', 'mv:fonts','build:html', 'build:scss','build:js'));
