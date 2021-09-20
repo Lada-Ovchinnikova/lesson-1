@@ -8,7 +8,62 @@
   <link href="css/main.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-light bg-transparent navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img src="img/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          Bootstrap
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div> 
+  </header>
+  
+    <div class="cc credit-card__section active">
+      <div class="container">
+      <div class="cc__floating">
+        <div class="cc__thickness"></div>
+        <div class="cc__thickness"></div>
+        <div class="cc__thickness"></div>
+        <div class="cc__body">
+          <div class="cc__paypal-center cc-svg"></div>
+          <div class="cc__logo cc-svg"></div>
+          <div class="cc__paywave cc-svg"></div>
+          <div class="cc__chips cc-svg"></div>
+          <div class="cc__card-no cc-text">
+            1234-5678-9012-3456
+          </div>
+          <div class="cc__valid cc-text">
+            VALID <br> THRU
+          </div>
+          <div class="cc__valid-date cc-text">
+            12/20
+          </div>
+          <div class="cc__holder cc-text">JOHN DOE</div>
+          <div class="cc__mastercard-icon cc-svg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -56,7 +111,7 @@
             <strong>$20</strong>
           </li>
         </ul>
-
+        
         <form class="card p-2">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Promo code">
@@ -165,15 +220,15 @@
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
               <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-              <label class="custom-control-label" for="credit">Credit card</label>
+              <label class="custom-control-label" for="credit"><i class="fab fa-cc-visa fa-fw"></i><i class="fab fa-cc-mastercard fa-fw"></i>Credit card</label>
             </div>
             <div class="custom-control custom-radio">
               <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="debit">Debit card</label>
+              <label class="custom-control-label" for="debit"><i class="far fa-credit-card"></i>Debit card</label>
             </div>
             <div class="custom-control custom-radio">
               <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="paypal">Paypal</label>
+              <label class="custom-control-label" for="paypal"><i class="fab fa-cc-paypal"></i>Paypal</label>
             </div>
           </div>
           <div class="row">
@@ -225,5 +280,6 @@
     </footer>
   </div>
   <script src="js/libs.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
